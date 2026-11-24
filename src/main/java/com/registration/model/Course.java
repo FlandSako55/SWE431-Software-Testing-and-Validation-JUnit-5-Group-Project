@@ -1,6 +1,7 @@
 package com.registration.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,5 +70,39 @@ public class Course {
 
     public Student pollWaitlist() {
         return waitlist.poll();
+    }
+
+    /**
+     * Verilen numaraya sahip öğrencinin derse kayıtlı olup olmadığını kontrol eder.
+     * Öğrenci nesnelerini değil öğrenci numaralarını karşılaştırır.
+     *
+     * @param studentId aranan öğrenci numarası
+     * @return bu numarayla kayıtlı bir öğrenci varsa {@code true}, null ise {@code false}
+     */
+    public boolean isEnrolled(String studentId) {
+        return containsStudentId(enrolledStudents, studentId);
+    }
+
+    /**
+     * Verilen numaraya sahip öğrencinin bekleme listesinde olup olmadığını kontrol eder.
+     * Öğrenci nesnelerini değil öğrenci numaralarını karşılaştırır.
+     *
+     * @param studentId aranan öğrenci numarası
+     * @return bu numarayla bekleyen bir öğrenci varsa {@code true}, null ise {@code false}
+     */
+    public boolean isWaitlisted(String studentId) {
+        return containsStudentId(waitlist, studentId);
+    }
+
+    private static boolean containsStudentId(Collection<Student> students, String studentId) {
+        if (studentId == null) {
+            return false;
+        }
+        for (Student student : students) {
+            if (studentId.equals(student.getStudentId())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
