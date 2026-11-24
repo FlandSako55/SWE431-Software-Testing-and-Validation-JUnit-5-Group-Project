@@ -2,20 +2,20 @@ package com.registration.service;
 
 public class ValidationService {
     /**
-     * Checks whether the student ID consists of exactly nine ASCII digits.
+     * Öğrenci numarasının tam dokuz ASCII rakamından oluşup oluşmadığını kontrol eder.
      *
-     * @param studentId student ID to validate
-     * @return whether the ID matches the format, or {@code false} for null
+     * @param studentId doğrulanacak öğrenci numarası
+     * @return numara biçime uygunsa {@code true}, null ise {@code false}
      */
     public boolean isValidStudentId(String studentId) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");
     }
 
     /**
-     * Checks for two to four uppercase ASCII letters followed by three ASCII digits.
+     * Ders kodunda iki ila dört büyük ASCII harfinin ardından üç ASCII rakamı arar.
      *
-     * @param courseCode course code to validate
-     * @return whether the code matches the format, or {@code false} for null
+     * @param courseCode doğrulanacak ders kodu
+     * @return kod biçime uygunsa {@code true}, null ise {@code false}
      */
     public boolean isValidCourseCode(String courseCode) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");

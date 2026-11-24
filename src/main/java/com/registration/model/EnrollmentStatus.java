@@ -1,6 +1,6 @@
 package com.registration.model;
 
-/** The outcome of requesting a seat or a place on the waitlist. */
+/** Ders kaydı veya bekleme listesi isteğinin sonucu. */
 public enum EnrollmentStatus {
     ENROLLED,
     WAITLISTED,

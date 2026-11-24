@@ -11,7 +11,7 @@ import com.registration.service.WithdrawalService;
 
 import java.util.function.ToIntFunction;
 
-/** Entry point for registration, withdrawal, and waitlist promotion. */
+/** Ders kaydı, kayıt silme ve bekleme listesinden öğrenci alma işlemlerinin giriş noktası. */
 public class RegistrationSystem {
     private final ValidationService validationService = new ValidationService();
     private final EligibilityService eligibilityService = new EligibilityService();
@@ -20,13 +20,13 @@ public class RegistrationSystem {
     private final WaitlistService waitlistService = new WaitlistService();
 
     /**
-     * Validates the request and sends eligible students to enrollment or the waitlist.
+     * İsteği doğrular ve uygun öğrenciyi derse kaydeder veya bekleme listesine alır.
      *
-     * @param student student requesting enrollment
-     * @param course requested course
-     * @param currentCredits total credits already enrolled, before adding this course
-     * @return the enrollment or waitlist outcome
-     * @throws IllegalArgumentException if the student or course is null or credits are negative
+     * @param student kayıt isteğinde bulunan öğrenci
+     * @param course kayıt istenen ders
+     * @param currentCredits bu ders eklenmeden önce öğrencinin kayıtlı olduğu toplam kredi
+     * @return kayıt veya bekleme listesi işleminin sonucu
+     * @throws IllegalArgumentException öğrenci veya ders null ise ya da kredi negatifse
      */
     public EnrollmentStatus register(Student student, Course course, int currentCredits) {
         if (student == null || course == null || currentCredits < 0) {
@@ -43,18 +43,18 @@ public class RegistrationSystem {
         return waitlistService.addToWaitlist(student, course);
     }
 
-    /** Removes an enrollment and returns whether it existed. */
+    /** Varsa ders kaydını siler ve kaydın silinip silinmediğini döndürür. */
     public boolean withdraw(Student student, Course course) {
         return withdrawalService.withdraw(student, course);
     }
 
     /**
-     * Offers a free seat to the first eligible student in the queue.
+     * Boş kontenjana bekleme listesindeki ilk uygun öğrenciyi alır.
      *
-     * @param course course with a seat to offer
-     * @param currentCredits supplies each candidate's enrolled credit total
-     * @return the promoted student, or {@code null} if no one was promoted
-     * @throws IllegalArgumentException if the course or credit lookup is null
+     * @param course boş kontenjanı olan ders
+     * @param currentCredits her adayın kayıtlı olduğu toplam krediyi sağlayan işlev
+     * @return derse alınan öğrenci, kimse alınmadıysa {@code null}
+     * @throws IllegalArgumentException ders veya kredi sorgulama işlevi null ise
      */
     public Student promoteNextStudent(Course course, ToIntFunction<Student> currentCredits) {
         if (course == null || currentCredits == null) {

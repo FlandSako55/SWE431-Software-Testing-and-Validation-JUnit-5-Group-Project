@@ -10,5 +10,5 @@ class EnrollmentServiceTest {
         assertNotNull(new RegistrationSystem().getEnrollmentService());
     }
 
-    // Add service behavior tests here when implementing the branch.
+    // Servisi kendi dalınızda tamamlarken davranış testlerini buraya ekleyin.
 }

@@ -8,28 +8,28 @@ import java.util.function.Predicate;
 
 public class WaitlistService {
     /**
-     * Adds an already validated and eligible student to the tail of a full
-     * course's waitlist. Checks roster and queue membership by student ID.
+     * Bilgileri doğrulanmış ve uygun bulunan öğrenciyi, kontenjanı dolu dersin
+     * bekleme listesinin sonuna ekler. Ders kaydını ve sırayı öğrenci numarasıyla kontrol eder.
      *
-     * @param student student requesting a waitlist place
-     * @param course requested course
-     * @return {@code WAITLISTED} on success, or {@code REJECTED} without changes
-     *         if a seat is available or the student is already enrolled or queued
-     * @throws IllegalArgumentException if either argument is null
+     * @param student bekleme listesine girmek isteyen öğrenci
+     * @param course kayıt istenen ders
+     * @return başarılıysa {@code WAITLISTED}. Kontenjan varsa veya öğrenci zaten
+     *         derse ya da bekleme listesine kayıtlıysa değişiklik yapmadan {@code REJECTED}
+     * @throws IllegalArgumentException argümanlardan biri null ise
      */
     public EnrollmentStatus addToWaitlist(Student student, Course course) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");
     }
 
     /**
-     * When a seat is available, removes candidates in FIFO order until the first
-     * eligible student who is not already enrolled is found. Updates the
-     * promoted student's record and the course roster.
+     * Boş kontenjan varsa adayları listeye giriş sırasıyla değerlendirir ve
+     * derse henüz kayıtlı olmayan ilk uygun öğrenciye kadar kuyruktan çıkarır.
+     * Derse alınan öğrencinin kaydını ve ders listesini günceller.
      *
-     * @param course course whose waitlist is processed
-     * @param eligibility eligibility check using each candidate's current credits
-     * @return the promoted student, or {@code null} if no seat or candidate is available
-     * @throws IllegalArgumentException if either argument is null
+     * @param course bekleme listesi işlenen ders
+     * @param eligibility her adayın mevcut kredisini kullanan uygunluk kontrolü
+     * @return derse alınan öğrenci, boş kontenjan veya uygun aday yoksa {@code null}
+     * @throws IllegalArgumentException argümanlardan biri null ise
      */
     public Student promoteNextStudent(Course course, Predicate<Student> eligibility) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");

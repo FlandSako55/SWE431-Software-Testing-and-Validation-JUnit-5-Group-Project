@@ -10,5 +10,5 @@ class WithdrawalServiceTest {
         assertNotNull(new RegistrationSystem().getWithdrawalService());
     }
 
-    // Add service behavior tests here when implementing the branch.
+    // Servisi kendi dalınızda tamamlarken davranış testlerini buraya ekleyin.
 }

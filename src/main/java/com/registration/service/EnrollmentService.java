@@ -6,25 +6,25 @@ import com.registration.model.Student;
 
 public class EnrollmentService {
     /**
-     * Checks whether the course has fewer enrolled students than available seats.
+     * Kayıtlı öğrenci sayısının dersin kontenjanından az olup olmadığını kontrol eder.
      *
-     * @param course course whose capacity is checked
-     * @return whether at least one seat is available
-     * @throws IllegalArgumentException if the course is null
+     * @param course kontenjanı kontrol edilen ders
+     * @return en az bir boş yer olup olmadığı
+     * @throws IllegalArgumentException ders null ise
      */
     public boolean hasCapacity(Course course) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");
     }
 
     /**
-     * Enrolls an already validated and eligible student when a seat is available.
-     * Updates both enrollment records on success and checks duplicates by student ID.
+     * Boş kontenjan varsa bilgileri doğrulanmış ve uygun bulunan öğrenciyi derse kaydeder.
+     * Tekrar kayıtları öğrenci numarasıyla kontrol eder ve başarılı olursa her iki kaydı günceller.
      *
-     * @param student student requesting enrollment
-     * @param course requested course
-     * @return {@code ENROLLED} on success, or {@code REJECTED} without changes
-     *         if the course is full or the student is already enrolled or waitlisted
-     * @throws IllegalArgumentException if either argument is null
+     * @param student kayıt isteğinde bulunan öğrenci
+     * @param course kayıt istenen ders
+     * @return başarılıysa {@code ENROLLED}. Ders doluysa veya öğrenci zaten
+     *         derse ya da bekleme listesine kayıtlıysa değişiklik yapmadan {@code REJECTED}
+     * @throws IllegalArgumentException argümanlardan biri null ise
      */
     public EnrollmentStatus enroll(Student student, Course course) {
         throw new UnsupportedOperationException("TODO: Implement in your branch");
