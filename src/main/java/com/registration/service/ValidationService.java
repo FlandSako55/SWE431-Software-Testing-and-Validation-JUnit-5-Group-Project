@@ -12,7 +12,8 @@ public class ValidationService {
     }
 
     /**
-     * Ders kodunda iki ila dört büyük ASCII harfinin ardından üç ASCII rakamı arar.
+     * Ders kodunun tamamının iki ila dört büyük ASCII harf ve ardından üç ASCII
+     * rakamdan oluşup oluşmadığını kontrol eder (örneğin {@code SWE431}).
      *
      * @param courseCode doğrulanacak ders kodu
      * @return kod biçime uygunsa {@code true}, null ise {@code false}
