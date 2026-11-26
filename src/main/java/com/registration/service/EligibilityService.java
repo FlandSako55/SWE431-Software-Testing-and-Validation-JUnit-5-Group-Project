@@ -15,7 +15,12 @@ public class EligibilityService {
      * @throws IllegalArgumentException öğrenci veya ders null ise ya da mevcut kredi negatifse
      */
     public boolean isEligible(Student student, Course course, int currentCredits) {
-        throw new UnsupportedOperationException("TODO: Implement in your branch");
+        if (student == null || course == null || currentCredits < 0) {
+            throw new IllegalArgumentException("Student and course are required, and current credits must be nonnegative");
+        }
+        return student.isActive()
+                && hasMetPrerequisites(student, course)
+                && currentCredits + course.getCredits() <= student.getMaxCredits();
     }
 
     /**
@@ -27,6 +32,9 @@ public class EligibilityService {
      * @throws IllegalArgumentException argümanlardan biri null ise
      */
     public boolean hasMetPrerequisites(Student student, Course course) {
-        throw new UnsupportedOperationException("TODO: Implement in your branch");
+        if (student == null || course == null) {
+            throw new IllegalArgumentException("Student and course are required");
+        }
+        return student.getCompletedCourses().containsAll(course.getPrerequisites());
     }
 }
