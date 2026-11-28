@@ -32,7 +32,7 @@ public class WithdrawalService {
             return false;
         }
 
-        course.removeEnrolledStudent(enrolledStudent);
+        course.removeEnrolledStudent(student);
         student.withdrawFromCourse(course.getCourseCode());
         return true;
     }
