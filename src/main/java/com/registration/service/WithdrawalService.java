@@ -33,6 +33,7 @@ public class WithdrawalService {
         }
 
         course.removeEnrolledStudent(enrolledStudent);
+        student.withdrawFromCourse(course.getCourseCode());
         return true;
     }
 }
