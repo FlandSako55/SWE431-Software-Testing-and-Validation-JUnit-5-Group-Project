@@ -15,6 +15,25 @@ public class WithdrawalService {
      * @throws IllegalArgumentException argümanlardan biri null ise
      */
     public boolean withdraw(Student student, Course course) {
-        throw new UnsupportedOperationException("TODO: Implement in your branch");
+        if (student == null || course == null) {
+            throw new IllegalArgumentException("Student and course are required");
+        }
+
+        String studentId = student.getStudentId();
+        Student enrolledStudent = null;
+        for (Student s : course.getEnrolledStudents()) {
+            if (studentId != null && studentId.equals(s.getStudentId())) {
+                enrolledStudent = s;
+                break;
+            }
+        }
+
+        if (enrolledStudent == null) {
+            return false;
+        }
+
+        course.removeEnrolledStudent(enrolledStudent);
+        student.withdrawFromCourse(course.getCourseCode());
+        return true;
     }
 }
