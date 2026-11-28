@@ -13,7 +13,7 @@ Last updated: 2026-11-28
 | 1 | — | Validation + Parameterized Test + README | `feat/validation` | No PR yet |
 | 2 | Samed Tevin (`samedTevin`) | Eligibility & Prerequisites + Decision Table + Test Design | `feat/eligibility` | Merged (#4) |
 | 3 | — | Capacity & Duplicate + Exception Assertion + Coverage | `feat/enrollment` | No PR yet |
-| 4 | Deniz Eren Gençtürk (`erengc`) | Course Withdrawal + Regression Test + Contribution Record | `feat/withdrawal` | PR open |
+| 4 | Deniz Eren Gençtürk (`erengc`) | Course Withdrawal + Regression Test + Contribution Record | `feat/withdrawal` | PR open (#5) |
 | 5 (leader) | — | Waitlist & Promotion + CFG & Basis Paths + Integration | `feat/waitlist` | No PR yet |
 
 ## Pull requests
@@ -24,6 +24,7 @@ Last updated: 2026-11-28
 | #2 | FlandSako55 (Ali Yekta Dalkılıç) | Setup/skeleton | Merged 2026-11-24 |
 | #3 | FlandSako55 (Ali Yekta Dalkılıç) | Readme biraz daha iyi oldu | Merged 2026-11-25 |
 | #4 | samedTevin (Samed Tevin) | Implement EligibilityService, JUnit 5 tests, decision table, and test design | Merged 2026-11-26 |
+| #5 | erengc (Deniz Eren Gençtürk) | Implement WithdrawalService, JUnit 5 tests, regression report, and contribution record | Open (opened 2026-11-28) |
 
 ## Work by member
 
@@ -54,7 +55,7 @@ Last updated: 2026-11-28
 - Ran two regression cycles (defect → FAIL → fix → PASS) and documented
   them in `docs/regression.md`.
 - Wrote this contribution record.
-- Branch `feat/withdrawal`, commits:
+- PR #5, branch `feat/withdrawal`, commits:
 
 | Commit | Message |
 |---|---|
@@ -63,5 +64,6 @@ Last updated: 2026-11-28
 | `ac01264` | Regression 1: fix defect (restore withdrawFromCourse call) |
 | `4a43707` | Regression 2: introduce defect (remove parameter object instead of listed student) |
 | `931841a` | Regression 2: fix defect (remove the student found by id) |
+| `0909426` | Add regression report and contribution record |
 
 Members 1, 3 and 5 will be added when their pull requests are merged.
